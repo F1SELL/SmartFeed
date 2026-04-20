@@ -38,3 +38,12 @@ type Subscription struct {
 	FolloweeID int64     `json:"followee_id"`
 	CreatedAt  time.Time `json:"created_at"`
 }
+
+// PostCreatedEvent — доменная модель события создания поста
+type PostCreatedEvent struct {
+	PostID     int64     `json:"post_id"`
+	AuthorID   int64     `json:"author_id"`
+	Content    string    `json:"content"`
+	CreatedAt  time.Time `json:"created_at"`
+	OccurredAt time.Time `json:"occurred_at"`
+}
