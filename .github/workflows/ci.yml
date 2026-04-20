@@ -24,6 +24,11 @@ jobs:
       - name: Download dependencies
         run: go mod download
 
+      - name: Verify module files are clean
+        run: |
+          go mod tidy
+          git diff --exit-code go.mod go.sum
+
       - name: Run CI checks
         run: make ci
 
